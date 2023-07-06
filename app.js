@@ -3,6 +3,7 @@ const express = require("express");
 const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
+const favicon = require("serve-favicon");
 
 const indexRouter = require("./routes/index");
 const projectsRouter = require("./routes/projects");
@@ -12,6 +13,11 @@ const app = express();
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
+
+// Set the path to the favicon.ico file
+const faviconPath = path.join(__dirname, "public", "images", "favicon.ico");
+// Serve the favicon
+app.use(favicon(faviconPath));
 
 app.use(logger("dev"));
 app.use(express.json());
