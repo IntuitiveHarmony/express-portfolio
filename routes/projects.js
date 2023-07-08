@@ -19,4 +19,18 @@ router.post("/", async (req, res) => {
   }
 });
 
+// Delete a project
+router.post("/:id", async (req, res) => {
+  try {
+    const project = await Project.findByIdAndDelete(req.params.id);
+    if (!project) {
+      return res.status(404).send("Project not found");
+    }
+    res.redirect("../admin/dashboard");
+  } catch (error) {
+    console.error("Error deleting project:", error);
+    res.status(500).send("Error deleting project");
+  }
+});
+
 module.exports = router;
