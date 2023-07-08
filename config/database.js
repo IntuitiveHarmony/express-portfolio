@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-
+require("dotenv").config();
 // This is my actual string in the .env file coming in
 const connectionString = process.env.MONGO_DB_URI;
 
