@@ -10,7 +10,7 @@ router.get("/", function (req, res, next) {
   res.render("admin", { title: "ADMIN", isAdmin: req.session.admin });
 });
 
-// register admin (uncomment to use)
+// Register new admin (uncomment to use)
 // router.post("/register", async (req, res) => {
 //   const { username, password } = req.body;
 //   const hashedPassword = await bcrypt.hash(password, 10);
