@@ -11,6 +11,10 @@ const adminRouter = require("./routes/admin");
 
 const app = express();
 
+require("dotenv").config();
+// connect to the database with AFTER the config vars are processed
+require("./config/database");
+
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
