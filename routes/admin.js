@@ -10,18 +10,18 @@ router.get("/", function (req, res, next) {
   res.render("admin", { title: "ADMIN", isAdmin: req.session.admin });
 });
 
-// register admin
-router.post("/register", async (req, res) => {
-  const { username, password } = req.body;
-  const hashedPassword = await bcrypt.hash(password, 10);
+// register admin (uncomment to use)
+// router.post("/register", async (req, res) => {
+//   const { username, password } = req.body;
+//   const hashedPassword = await bcrypt.hash(password, 10);
 
-  const user = new Admin({
-    username,
-    password: hashedPassword,
-  });
-  await user.save();
-  res.send("Admin registered successfully!");
-});
+//   const user = new Admin({
+//     username,
+//     password: hashedPassword,
+//   });
+//   await user.save();
+//   res.send("Admin registered successfully!");
+// });
 
 // Log in as an admin
 router.post("/login", async (req, res) => {
@@ -45,6 +45,7 @@ router.post("/login", async (req, res) => {
   res.redirect("dashboard");
 });
 
+// once logged in this route is available
 router.get("/dashboard", async (req, res) => {
   if (req.session.admin) {
     try {
@@ -59,11 +60,5 @@ router.get("/dashboard", async (req, res) => {
     }
   }
 });
-
-// // Log out
-// router.get("/logout", (req, res) => {
-//   req.session.destroy();
-//   res.send("Logged out successfully!");
-// });
 
 module.exports = router;
