@@ -6,9 +6,10 @@ const Admin = require("../models/admin");
 
 /* GET users listing. */
 router.get("/", function (req, res, next) {
-  res.render("admin", { title: "ADMIN" });
+  res.render("admin", { title: "ADMIN", isAdmin: req.session.admin });
 });
 
+// register admin
 router.post("/register", async (req, res) => {
   const { username, password } = req.body;
   const hashedPassword = await bcrypt.hash(password, 10);
@@ -19,6 +20,38 @@ router.post("/register", async (req, res) => {
   });
   await user.save();
   res.send("Admin registered successfully!");
+});
+
+// Log in as an admin
+router.post("/login", async (req, res) => {
+  const { username, password } = req.body;
+
+  const user = await Admin.findOne({ username });
+
+  if (!user) {
+    res.status(401).send("Invalid username or password");
+    return;
+  }
+  console.log(password, user.password);
+  const validPassword = await bcrypt.compare(password, user.password);
+
+  if (!validPassword) {
+    res.status(401).send("Invalid username or password");
+    return;
+  }
+
+  req.session.admin = true;
+  res.redirect("dashboard");
+});
+
+router.get("/dashboard", (req, res) => {
+  res.render("dashboard", { title: "DASHBOARD", isAdmin: req.session.admin });
+});
+
+// Log out
+router.post("/logout", (req, res) => {
+  req.session.destroy();
+  res.send("Logged out successfully!");
 });
 
 module.exports = router;
