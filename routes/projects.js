@@ -12,7 +12,7 @@ router.post("/", async (req, res) => {
   try {
     const project = new Project(req.body);
     await project.save();
-    res.status(201).send("Project created successfully!");
+    res.redirect("admin/dashboard");
   } catch (error) {
     console.error("Error creating project:", error);
     res.status(500).send("Error creating project");

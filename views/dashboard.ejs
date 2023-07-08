@@ -4,34 +4,84 @@
 
   <body>
     <%- include("partials/nav") %>
-    <table class="table table-bordered">
-      <thead>
+<div class="container">
+  <h2>Dashboard</h2>
+
+  <!-- Table to display projects -->
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Image</th>
+        <th>Live Link</th>
+        <th>Description</th>
+        <th>GitHub Link</th>
+        <th>Display</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% projects.forEach((project)=> { %>
         <tr>
-          <th>Name</th>
-          <th>Image</th>
-          <th>Live Link</th>
-          <th>Description</th>
-          <th>GitHub Link</th>
-          <th>Display</th>
-          <th>Actions</th>
+          <td>
+            <%= project.name %>
+          </td>
+          <td>
+            <%= project.img %>
+          </td>
+          <td>
+            <%= project.liveLink %>
+          </td>
+          <td>
+            <%= project.description %>
+          </td>
+          <td>
+            <%= project.githubLink %>
+          </td>
+          <td>
+            <%= project.display %>
+          </td>
+          <td>
+            <a href="/projects/<%= project._id %>/edit" class="btn btn-primary">Edit</a>
+            <form action="/projects/<%= project._id %>?_method=DELETE" method="POST" style="display: inline;">
+              <button type="submit" class="btn btn-danger">Delete</button>
+            </form>
+          </td>
         </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <form action="/projects" method="POST">
-            <td><input type="text" name="name" class="form-control"></td>
-            <td><input type="text" name="img" class="form-control"></td>
-            <td><input type="text" name="liveLink" class="form-control"></td>
-            <td><input type="text" name="description" class="form-control"></td>
-            <td><input type="text" name="githubLink" class="form-control"></td>
-            <td><input type="checkbox" name="display" class="form-check-input"></td>
-            <td>
-              <button type="submit" class="btn btn-primary">Add Project</button>
-            </td>
-          </form>
-        </tr>
-      </tbody>
-    </table>
+        <% }) %>
+    </tbody>
+  </table>
+
+  <!-- Form to add a new project -->
+  <h3>Add New Project</h3>
+  <form action="/projects" method="POST">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" name="name" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label for="img">Image:</label>
+      <input type="text" name="img" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="liveLink">Live Link:</label>
+      <input type="text" name="liveLink" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="description">Description:</label>
+      <input type="text" name="description" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="githubLink">GitHub Link:</label>
+      <input type="text" name="githubLink" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="display">Display:</label>
+      <input type="checkbox" name="display" class="form-check-input">
+    </div>
+    <button type="submit" class="btn btn-primary">Add Project</button>
+  </form>
+</div>
   </body>
 
 </html>

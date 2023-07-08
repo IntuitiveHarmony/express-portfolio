@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcrypt");
 const Admin = require("../models/admin");
+const Project = require("../models/project");
 // const adminCtrl = require("../controllers/admin");
 
 /* GET users listing. */
@@ -44,9 +45,18 @@ router.post("/login", async (req, res) => {
   res.redirect("dashboard");
 });
 
-router.get("/dashboard", (req, res) => {
+router.get("/dashboard", async (req, res) => {
   if (req.session.admin) {
-    res.render("dashboard", { title: "DASHBOARD", isAdmin: req.session.admin });
+    try {
+      const projects = await Project.find({});
+      res.render("dashboard", {
+        title: "DASHBOARD",
+        isAdmin: req.session.admin,
+        projects: projects,
+      });
+    } catch (err) {
+      res.status(500).send("Error getting projects");
+    }
   }
 });
 
