@@ -44,49 +44,53 @@
       <h2>Current Projects</h2>
 
       <!-- Table to display projects -->
-      <table class="table table-bordered">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Image</th>
-            <th>Live Link</th>
-            <th>Description</th>
-            <th>GitHub Link</th>
-            <th>Display</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% projects.forEach((project)=> { %>
+      <div class="table-responsive">
+        <table class="table table-bordered">
+          <thead>
             <tr>
-              <td>
-                <%= project.name %>
-              </td>
-              <td>
-                <%= project.img %>
-              </td>
-              <td>
-                <%= project.liveLink %>
-              </td>
-              <td>
-                <%= project.description %>
-              </td>
-              <td>
-                <%= project.githubLink %>
-              </td>
-              <td>
-                <%= project.display %>
-              </td>
-              <td>
-                <a href="/projects/<%= project._id %>/edit" class="btn btn-primary"><i class="fa-regular fa-pen-to-square"></i></a>
-                <form action="/projects/<%= project._id %>?_method=DELETE" method="POST" style="display: inline;">
-                  <button type="submit" class="btn btn-danger"><i class="fa-regular fa-trash-can"></i></button>
-                </form>
-              </td>
+              <th>Name</th>
+              <th>Image</th>
+              <th>Live Link</th>
+              <th>Description</th>
+              <th>GitHub Link</th>
+              <th>Display</th>
+              <th>Actions</th>
             </tr>
-            <% }) %>
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            <% projects.forEach((project)=> { %>
+              <tr>
+                <td>
+                  <%= project.name %>
+                </td>
+                <td>
+                  <%= project.img %>
+                </td>
+                <td>
+                  <%= project.liveLink %>
+                </td>
+                <td>
+                  <%= project.description %>
+                </td>
+                <td>
+                  <%= project.githubLink %>
+                </td>
+                <td>
+                  <%= project.display %>
+                </td>
+                <td>
+                  <a href="/projects/<%= project._id %>/edit" class="btn btn-primary"><i
+                      class="fa-regular fa-pen-to-square"></i></a>
+                  <form action="/projects/<%= project._id %>?_method=DELETE" method="POST" style="display: inline;">
+                    <button type="submit" class="btn btn-danger"><i class="fa-regular fa-trash-can"></i></button>
+                  </form>
+                </td>
+              </tr>
+              <% }) %>
+          </tbody>
+        </table>
+      </div>
+
 
     </div>
   </body>

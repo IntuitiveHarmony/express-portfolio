@@ -4,6 +4,7 @@ body {
 }
 
 nav {
+  position: fixed;
   font-size: 1.6em;
 }
 .nav-background {
@@ -53,4 +54,7 @@ nav {
 }
 .project-img {
   max-width: 25em;
+}
+.content-container {
+  margin-top: 6em;
 }
