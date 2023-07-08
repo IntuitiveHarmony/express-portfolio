@@ -6,7 +6,7 @@ const projectSchema = new mongoose.Schema({
   liveLink: { type: String },
   description: { type: String },
   githubLink: { type: String },
-  display: { type: Boolean, default: true },
+  display: { type: Boolean },
 });
 
 const Project = mongoose.model("Project", projectSchema);

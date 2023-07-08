@@ -60,10 +60,10 @@ router.get("/dashboard", async (req, res) => {
   }
 });
 
-// Log out
-router.post("/logout", (req, res) => {
-  req.session.destroy();
-  res.send("Logged out successfully!");
-});
+// // Log out
+// router.get("/logout", (req, res) => {
+//   req.session.destroy();
+//   res.send("Logged out successfully!");
+// });
 
 module.exports = router;

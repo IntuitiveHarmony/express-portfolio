@@ -9,6 +9,7 @@ router.get("/", function (req, res, next) {
 
 // Create a new project
 router.post("/", async (req, res) => {
+  console.log(req.body);
   try {
     const project = new Project(req.body);
     await project.save();
