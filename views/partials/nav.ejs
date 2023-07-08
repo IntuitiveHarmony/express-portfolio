@@ -1,19 +1,21 @@
 <nav class="navbar navbar-expand-lg nav-background">
   <div class="container-fluid">
     <a class="navbar-brand" href="/"><img src="/images/favicon.ico" alt="Logo" class="logo"></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+    <a class="navbar-brand name" aria-current="page" href="/">Jason Horst</a>
+
+    <button class="navbar-toggler nav-link" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link name" aria-current="page" href="/">Jason Horst</a>
+          <!-- <a class="nav-link name" aria-current="page" href="/">Jason Horst</a> -->
         </li>
         <div class="vertical-line"></div>
         <li class="nav-item secondary-box">
           <a class="nav-link secondary-link" href="/projects">Projects</a>
-          <a class="nav-link secondary-link" href="/projects">Fun Stuff</a>
+          <a class="nav-link secondary-link disabled" href="/funStuff">Fun Stuff</a>
         </li>
         <% if (isAdmin) { %>
           <li class="nav-item">

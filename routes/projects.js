@@ -3,8 +3,13 @@ const router = express.Router();
 const Project = require("../models/project");
 
 /* GET users listing. */
-router.get("/", function (req, res, next) {
-  res.render("projects", { title: "Projects", isAdmin: req.session.admin });
+router.get("/", async (req, res) => {
+  const projects = await Project.find({});
+  res.render("projects", {
+    title: "Projects",
+    isAdmin: req.session.admin,
+    projects: projects,
+  });
 });
 
 // Create a new project
