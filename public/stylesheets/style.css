@@ -1,0 +1,19 @@
+nav {
+  font-size: 1.7em;
+}
+.nav-background {
+  background-color: rgba(255, 0, 255, 0.6);
+  box-shadow: 2px;
+}
+.nav-link {
+  color: aqua;
+}
+.navbar-nav-right {
+  margin-left: auto;
+}
+.logo {
+  max-width: 2.5em;
+}
+.justify-right {
+  justify-content: flex-end;
+}
