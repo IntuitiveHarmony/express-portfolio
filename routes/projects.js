@@ -20,6 +20,37 @@ router.post("/", async (req, res) => {
   }
 });
 
+// Update Project form
+router.get("/:id/edit", async (req, res) => {
+  try {
+    const project = await Project.findById(req.params.id);
+    res.render("edit", {
+      project: project,
+      isAdmin: req.session.admin,
+      title: `Edit ${project.name}`,
+    });
+  } catch (error) {
+    console.error("Error updating project:", error);
+    res.status(500).send("Error deleting project");
+  }
+});
+
+// Update a project in DB
+router.post("/:id/edit", async (req, res) => {
+  try {
+    const project = await Project.findByIdAndUpdate(req.params.id, req.body, {
+      new: true,
+    });
+    if (!project) {
+      return res.status(404).send("Project not found");
+    }
+    res.redirect("../../admin/dashboard");
+  } catch (error) {
+    console.error("Error updating project:", error);
+    res.status(500).send("Error updating project");
+  }
+});
+
 // Delete a project
 router.post("/:id", async (req, res) => {
   try {
