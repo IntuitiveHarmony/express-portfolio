@@ -45,7 +45,9 @@ router.post("/login", async (req, res) => {
 });
 
 router.get("/dashboard", (req, res) => {
-  res.render("dashboard", { title: "DASHBOARD", isAdmin: req.session.admin });
+  if (req.session.admin) {
+    res.render("dashboard", { title: "DASHBOARD", isAdmin: req.session.admin });
+  }
 });
 
 // Log out
