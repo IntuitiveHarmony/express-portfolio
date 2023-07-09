@@ -1,8 +1,7 @@
 body {
+  box-sizing: border-box;
   background-color: black;
   color: rgb(0, 162, 255);
-  display: flex;
-  flex-direction: column;
   position: relative;
 }
 body::after {
@@ -72,21 +71,31 @@ nav {
 .project-img {
   max-width: 25em;
 }
-.content-container {
+.content-container { 
+  border-top-left-radius: 12em 9em;
   margin: 3em;
-  /* margin-top: 12em; */
+  background-color: rgba(90, 42, 141, 0.8);
+  padding: 1.5em;
 }
-.header-container {
-  display: flex;
-}
+
 .profile-img {
   float: left;
-  shape-outside: circle(50%) !important;
+  shape-outside: circle();
   border-radius: 50%;
-  width: 9em;
-  height: 9em;
+  width: 19em;
+  height: 19em;
   min-width: 9em;
   object-fit: cover;
   object-position: 50% 70%;
-  /* margin-right: 1em; */
+  margin-right: 2.3em;
+}
+.right {
+  border-radius: 50%;
+  width: 23em;
+  height: 23em;
+  margin-left: 1.7em;
+  object-fit: cover;
+  object-position: 70% 70%;
+  float: right;
+  shape-outside: circle();
 }
