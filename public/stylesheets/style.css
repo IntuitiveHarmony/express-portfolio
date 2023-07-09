@@ -9,6 +9,7 @@ body::after {
   background-image: url('/images/synthwaveWire.png');  
   background-repeat: repeat;
   background-size: 250px;
+  filter: saturate(65%);
   opacity: 0.4;
   content: "";
   object-fit: contain;
@@ -72,5 +73,20 @@ nav {
   max-width: 25em;
 }
 .content-container {
-  margin-top: 6em;
+  margin: 3em;
+  /* margin-top: 12em; */
+}
+.header-container {
+  display: flex;
+}
+.profile-img {
+  float: left;
+  shape-outside: circle(50%) !important;
+  border-radius: 50%;
+  width: 9em;
+  height: 9em;
+  min-width: 9em;
+  object-fit: cover;
+  object-position: 50% 70%;
+  /* margin-right: 1em; */
 }
