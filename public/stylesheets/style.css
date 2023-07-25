@@ -68,25 +68,25 @@ nav {
   padding: 0;
   font-size: .7em;
 }
-.project-img {
-  max-width: 25em;
-}
 .content-container { 
   border-top-left-radius: 12em 9em;
-  margin: 3em;
+  margin: 1em;
   background-color: rgba(90, 42, 141, 0.8);
-  padding: 1.5em;
+  padding: 1em;
 }
 .profile-img {
   float: left;
   shape-outside: circle();
   border-radius: 50%;
-  width: 19em;
-  height: 19em;
-  min-width: 9em;
+  width: 7em;
+  height: 7em;
+  min-width: 7em;
   object-fit: cover;
   object-position: 50% 70%;
   margin-right: 2.3em;
+}
+.greeting {
+  font-size: 1.3em;
 }
 .right {
   border-radius: 50%;
@@ -97,4 +97,41 @@ nav {
   object-position: 70% 70%;
   float: right;
   shape-outside: circle();
+}
+.project-deck {
+  display: flex;
+  flex-wrap: wrap;
+}
+.project-card {
+  margin-bottom: 2em;
+  max-width: 100%;
+}
+.project-img {
+  max-width: 100%;
+}
+/* Tablet breakpoint (768px) */
+@media (min-width: 768px) {
+  
+}
+
+/* Desktop styles (applies to screens larger than 768px) */
+@media (min-width: 1024px) {
+  .content-container {
+      border-top-left-radius: 12em 9em;
+      margin: 1em;
+      background-color: rgba(90, 42, 141, 0.8);
+      padding: 1.5em;
+    }
+  
+    .profile-img {
+      float: left;
+      shape-outside: circle();
+      border-radius: 50%;
+      width: 19em;
+      height: 19em;
+      min-width: 9em;
+      object-fit: cover;
+      object-position: 50% 70%;
+      margin-right: 2.3em;
+    }
 }
