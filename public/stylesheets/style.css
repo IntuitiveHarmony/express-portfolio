@@ -1,4 +1,8 @@
 body {
+  height: 100vh;
+  margin: 0;
+  display: grid;
+  grid-template-rows: 1fr auto;
   box-sizing: border-box;
   background-color: black;
   color: rgb(0, 162, 255);
@@ -40,7 +44,6 @@ nav {
   width: 2px;
   /* Adjust the height as needed */
   background-color: rgba(255, 0, 255, 0.7);
-  /* Set the color of the line */
 }
 @keyframes rotate {
   0% {
@@ -69,6 +72,7 @@ nav {
   font-size: .7em;
 }
 .content-container { 
+  height: initial;
   border-top-left-radius: 4em 3em;
   margin: 1em;
   background-color: rgba(90, 42, 141, 0.8);
@@ -109,6 +113,38 @@ nav {
 .project-img {
   max-width: 100%;
 }
+
+footer {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  height: 100%;
+  background-color: rgba(1, 233, 245, 0.7);
+  color: magenta;
+  height: 2em;
+}
+
+.triangles {
+  width: 100vw;
+  margin-top: 3em;
+  display: grid;
+  grid-gap: 0px;
+  grid-template-columns: repeat(33, 1fr);
+}
+.triangle {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 20px 20px 20px;
+  /* Adjust the border-width to control the size of the triangle */
+  border-color: rgba(1, 233, 245, 0.7) transparent rgba(1, 233, 245, 0.7) transparent;
+}
+.footer-content {
+  max-width: 100vh;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+
 /* Tablet breakpoint (768px) */
 @media (min-width: 768px) {
   
@@ -116,14 +152,20 @@ nav {
 
 /* Desktop styles (applies to screens larger than 768px) */
 @media (min-width: 1024px) {
+  nav {
+      font-size: 1.6em;
+    }
+  .greeting {
+    font-size: 1.7em;
+  }
   .content-container {
       border-top-left-radius: 12em 9em;
+      padding: 1.5em;
     }
-  
-    .profile-img {
-      width: 19em;
-      height: 19em;
-      min-width: 9em;
-      margin-right: 2.3em;
-    }
+  .profile-img {
+    width: 19em;
+    height: 19em;
+    min-width: 9em;
+    margin-right: 2.3em;
+  }
 }
