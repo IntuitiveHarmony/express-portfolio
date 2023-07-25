@@ -21,7 +21,7 @@ body::after {
 }
 nav {
   position: fixed;
-  font-size: 1.6em;
+  font-size: 1.3em;
 }
 .nav-background {
   background-color: rgba(255, 0, 255, 0.8);
@@ -69,10 +69,10 @@ nav {
   font-size: .7em;
 }
 .content-container { 
-  border-top-left-radius: 12em 9em;
+  border-top-left-radius: 4em 3em;
   margin: 1em;
   background-color: rgba(90, 42, 141, 0.8);
-  padding: 1em;
+  padding: .7em;
 }
 .profile-img {
   float: left;
@@ -83,7 +83,7 @@ nav {
   min-width: 7em;
   object-fit: cover;
   object-position: 50% 70%;
-  margin-right: 2.3em;
+  margin-right: 1.7em;
 }
 .greeting {
   font-size: 1.3em;
@@ -118,20 +118,12 @@ nav {
 @media (min-width: 1024px) {
   .content-container {
       border-top-left-radius: 12em 9em;
-      margin: 1em;
-      background-color: rgba(90, 42, 141, 0.8);
-      padding: 1.5em;
     }
   
     .profile-img {
-      float: left;
-      shape-outside: circle();
-      border-radius: 50%;
       width: 19em;
       height: 19em;
       min-width: 9em;
-      object-fit: cover;
-      object-position: 50% 70%;
       margin-right: 2.3em;
     }
 }
