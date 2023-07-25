@@ -4,6 +4,7 @@
  * Module dependencies.
  */
 
+const { log } = require("console");
 const app = require("../app");
 const debug = require("debug")("express-portfolio:server");
 const http = require("http");
@@ -83,4 +84,5 @@ function onListening() {
   const addr = server.address();
   const bind = typeof addr === "string" ? "pipe " + addr : "port " + addr.port;
   debug("Listening on " + bind);
+  console.log("\n📡 Listening on " + bind + "\n");
 }

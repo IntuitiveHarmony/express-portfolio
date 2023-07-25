@@ -2,11 +2,8 @@
 const adjustContentPosition = () => {
   const navbarHeight = $(".navbar").height();
   $(".content-container").css("margin-top", navbarHeight + 30 + "px");
-
-  console.log(navbarHeight);
 };
 $(".navbar-toggler").on("click", () => {
-  console.log("click");
   setTimeout(adjustContentPosition, 400);
 });
 $(document).ready(() => {

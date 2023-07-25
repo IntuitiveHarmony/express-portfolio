@@ -9,7 +9,7 @@ mongoose.connect(connectionString);
 // mongoDB connection on success
 mongoose.connection.on("connected", () => {
   console.log(
-    `[${new Date().toLocaleTimeString()}] - MongoDB connected... 🙌 🙌 🙌`
+    `[${new Date().toLocaleTimeString()}] - MongoDB connected... 🙌 🙌 🙌\n`
   );
 });
 
