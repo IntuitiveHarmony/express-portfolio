@@ -64,19 +64,20 @@ nav {
 .secondary-box {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
 }
 .secondary-link {
   padding: 0;
-  padding-left: .5em;
-  padding-right: .5em;
+  /* padding-left: .5em;
+  padding-right: .5em; */
   font-size: .7em;
 }
 .link-box {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  font-size: .85em;
 }
 .content-container { 
   height: initial;
