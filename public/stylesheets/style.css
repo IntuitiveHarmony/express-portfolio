@@ -25,14 +25,14 @@ body::after {
 }
 nav {
   position: fixed;
-  font-size: 1.3em;
+  font-size: 1.8em;
 }
 .nav-background {
   background-color: rgba(255, 0, 255, 0.8);
   box-shadow: 2px;
 }
 .name {
-  font-size: 1.6em;
+  
 }
 .nav-link {
   color: rgb(0, 213, 255);
@@ -78,6 +78,10 @@ nav {
   background-color: rgba(90, 42, 141, 0.8);
   padding: .7em;
 }
+.blue-pink-border {
+  padding: .2em;
+  box-shadow: 1px 3px 0px rgba(255, 0, 255, 0.6), -5px -3px 0px rgba(1, 233, 245, 0.6);
+}
 .profile-img {
   float: left;
   shape-outside: circle();
@@ -94,8 +98,8 @@ nav {
 }
 .right {
   border-radius: 50%;
-  width: 23em;
-  height: 23em;
+  width: 11em;
+  height: 11em;
   margin-left: 1.7em;
   object-fit: cover;
   object-position: 70% 70%;
@@ -103,15 +107,25 @@ nav {
   shape-outside: circle();
 }
 .project-deck {
+  display: initial;
   display: flex;
   flex-wrap: wrap;
 }
 .project-card {
+  margin: 1em;
   margin-bottom: 2em;
-  max-width: 100%;
+  max-width: 25em;
 }
 .project-img {
-  max-width: 100%;
+  display: initial;
+  float: left;
+  margin-right: 1.3em;
+  shape-outside: circle();
+  border-radius: 50%;
+  height: 7em;
+  width: 7em;
+  object-fit: cover;
+  /* outline: 1px solid magenta; */
 }
 :root {
   /* Define CSS variables for triangle size based on the viewport width */

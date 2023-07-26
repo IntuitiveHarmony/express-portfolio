@@ -12,20 +12,21 @@
       <div class="project-deck">
         <% projects.forEach(function(project) { %>
           <div class="project-card" id="<%= project.name %>">
+            <img class="project-img blue-pink-border" src="<%= project.img %>" alt="<%= project.name %>">
             <h2 class="card-title">
               <%= project.name %>
             </h2>
-            <img class="project-img" src="<%= project.img %>" alt="<%= project.name %>">
+            <br>
             <div class="card-body">
               <p class="card-text">
                 <%= project.description %>
               </p>
               <a href="<%= project.liveLink %>" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Live
                 Link</a>
-              <a href="<%= project.githubLink %>" class="btn btn-secondary" target="_blank"
+                <a href="<%= project.githubLink %>" class="btn btn-secondary" target="_blank"
                   rel="noopener noreferrer"><i class="fa-brands fa-github"></i> GitHub</a>
-            </div>
-          </div>
+                </div>
+              </div>
         <% }) %>
       </div>
     </div>
