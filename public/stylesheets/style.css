@@ -74,7 +74,7 @@ nav {
 .content-container { 
   height: initial;
   border-top-left-radius: 4em 3em;
-  margin: 1em;
+  margin: .5em;
   background-color: rgba(90, 42, 141, 0.8);
   padding: .7em;
 }
@@ -98,9 +98,9 @@ nav {
 }
 .right {
   border-radius: 50%;
-  width: 11em;
-  height: 11em;
-  margin-left: 1.7em;
+  width: 9em;
+  height: 9em;
+  margin-left: 1.2em;
   object-fit: cover;
   object-position: 70% 70%;
   float: right;
