@@ -182,14 +182,8 @@ footer {
   border-style: solid;
   border-left: 55px solid transparent;
   border-right: 55px solid transparent;
-  border-top: 5px solid transparent;
-  
+  border-top: 25px solid transparent;
   border-bottom: 25px solid rgba(1, 233, 245, 0.7);
-
-  /* Use the CSS variables for triangle size */
-  /* border-width: 0 var(--triangle-width) var(--triangle-height) var(--triangle-width); */
-  /* Set the border color to match the background color of the footer */
-  /* border-color: rgba(1, 233, 245, 0.7) transparent rgba(1, 233, 245, 0.7) transparent; */
 }
 .footer-content {
   font-size: .9em;
@@ -201,6 +195,9 @@ footer {
   text-decoration: none;
   color: azure;
   cursor: pointer;
+}
+.footer-link:hover {
+  color: black;
 }
 
 /* Tablet breakpoint (768px) */
