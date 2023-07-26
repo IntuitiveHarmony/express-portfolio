@@ -81,7 +81,7 @@
                 <td>
                   <a href="/projects/<%= project._id %>/edit" class="btn btn-primary"><i
                       class="fa-regular fa-pen-to-square"></i></a>
-                  <form action="/projects/<%= project._id %>?_method=DELETE" method="POST" style="display: inline;">
+                  <form action="/projects/<%= project._id %>?_method=DELETE" method="POST" onsubmit="return confirm('Sure you want to delete <%= project.name %>?')" style="display: inline;">
                     <button type="submit" class="btn btn-danger"><i class="fa-regular fa-trash-can"></i></button>
                   </form>
                 </td>
