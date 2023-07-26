@@ -18,9 +18,7 @@
             </h2>
             <br>
             <div class="card-body">
-              <p class="card-text">
-                <%= project.description %>
-              </p>
+              <a href="projects/<%= project.id %>">Details</a>
               <a href="<%= project.liveLink %>" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Live
                 Link</a>
                 <a href="<%= project.githubLink %>" class="btn btn-secondary" target="_blank"

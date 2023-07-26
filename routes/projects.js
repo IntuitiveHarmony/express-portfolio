@@ -6,7 +6,7 @@ const Project = require("../models/project");
 router.get("/", async (req, res) => {
   const projects = await Project.find({});
   res.render("projects", {
-    title: "Projects",
+    title: "Jason Horst | Projects",
     isAdmin: req.session.admin,
     projects: projects,
   });
@@ -14,14 +14,17 @@ router.get("/", async (req, res) => {
 
 // Create a new project
 router.post("/", async (req, res) => {
-  console.log(req.body);
-  try {
-    const project = new Project(req.body);
-    await project.save();
-    res.redirect("admin/dashboard");
-  } catch (error) {
-    console.error("Error creating project:", error);
-    res.status(500).send("Error creating project");
+  if (req.session.admin) {
+    try {
+      const project = new Project(req.body);
+      await project.save();
+      res.redirect("admin/dashboard");
+    } catch (error) {
+      console.error("Error creating project:", error);
+      res.status(500).send("Error creating project");
+    }
+  } else {
+    res.status(500).send("Not Authorized");
   }
 });
 
@@ -39,34 +42,55 @@ router.get("/:id/edit", async (req, res) => {
     res.status(500).send("Error deleting project");
   }
 });
-
-// Update a project in DB
-router.post("/:id/edit", async (req, res) => {
+// Show Route
+router.get("/:id", async (req, res) => {
   try {
-    const project = await Project.findByIdAndUpdate(req.params.id, req.body, {
-      new: true,
+    const project = await Project.findById(req.params.id);
+    res.render("show", {
+      project: project,
+      isAdmin: req.session.admin,
+      title: `${project.name} | Details`,
     });
-    if (!project) {
-      return res.status(404).send("Project not found");
-    }
-    res.redirect("../../admin/dashboard");
   } catch (error) {
     console.error("Error updating project:", error);
-    res.status(500).send("Error updating project");
+    res.status(500).send("Error deleting project");
+  }
+});
+// Update a project in DB
+router.post("/:id/edit", async (req, res) => {
+  if (req.session.admin) {
+    try {
+      const project = await Project.findByIdAndUpdate(req.params.id, req.body, {
+        new: true,
+      });
+      if (!project) {
+        return res.status(404).send("Project not found");
+      }
+      res.redirect("../../admin/dashboard");
+    } catch (error) {
+      console.error("Error updating project:", error);
+      res.status(500).send("Error updating project");
+    }
+  } else {
+    res.status(500).send("Not Authorized");
   }
 });
 
 // Delete a project
 router.post("/:id", async (req, res) => {
-  try {
-    const project = await Project.findByIdAndDelete(req.params.id);
-    if (!project) {
-      return res.status(404).send("Project not found");
+  if (req.session.admin) {
+    try {
+      const project = await Project.findByIdAndDelete(req.params.id);
+      if (!project) {
+        return res.status(404).send("Project not found");
+      }
+      res.redirect("../admin/dashboard");
+    } catch (error) {
+      console.error("Error deleting project:", error);
+      res.status(500).send("Error deleting project");
     }
-    res.redirect("../admin/dashboard");
-  } catch (error) {
-    console.error("Error deleting project:", error);
-    res.status(500).send("Error deleting project");
+  } else {
+    res.status(500).send("Not Authorized");
   }
 });
 
