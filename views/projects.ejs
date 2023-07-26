@@ -16,15 +16,13 @@
             <h2 class="card-title">
               <%= project.name %>
             </h2>
-            <br>
+            <hr>
             <div class="card-body">
-              <a href="projects/<%= project.id %>">Details</a>
-              <a href="<%= project.liveLink %>" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Live
-                Link</a>
-                <a href="<%= project.githubLink %>" class="btn btn-secondary" target="_blank"
-                  rel="noopener noreferrer"><i class="fa-brands fa-github"></i> GitHub</a>
-                </div>
-              </div>
+              <a href="projects/<%= project.id %>" class="card-link nav-link">🔎 Details</a>
+              <a href="<%= project.liveLink %>" class="card-link nav-link" target="_blank" rel="noopener noreferrer">⚡ Live Link</a>
+              <a href="<%= project.githubLink %>" class="card-link nav-link" target="_blank" rel="noopener noreferrer">📂 Repository</a>
+            </div>
+          </div>
         <% }) %>
       </div>
     </div>

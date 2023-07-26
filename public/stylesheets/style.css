@@ -115,14 +115,40 @@ nav {
   shape-outside: circle();
 }
 .project-deck {
-  display: initial;
   display: flex;
   flex-wrap: wrap;
 }
 .project-card {
+  flex-grow: 1;
+  display: initial;
   margin: 1em;
   margin-bottom: 2em;
-  max-width: 25em;
+  width: 15em;
+  margin: 1.3em;
+}
+hr {
+  opacity: .7;
+  height: 2px;
+  color: magenta;
+  background-color: magenta;
+  margin: 0;
+  padding: 0;
+}
+.card-title {
+  color: magenta;
+  white-space: nowrap;
+}
+.green-txt {
+  color: rgb(26, 182, 107);
+}
+.card-link {
+  text-decoration: none;
+  cursor: pointer;
+  display: block;
+  padding-top: .3em;
+}
+.card-link:hover {
+  color: black;
 }
 .project-img {
   display: initial;
