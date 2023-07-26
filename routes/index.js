@@ -4,7 +4,7 @@ const router = express.Router();
 /* GET home page. */
 router.get("/", function (req, res, next) {
   res.render("home", {
-    title: "Jason Horst Homepage",
+    title: "Homepage",
     isAdmin: req.session.admin,
   });
 });

@@ -6,7 +6,7 @@ const Project = require("../models/project");
 router.get("/", async (req, res) => {
   const projects = await Project.find({});
   res.render("projects", {
-    title: "Jason Horst | Projects",
+    title: "Projects",
     isAdmin: req.session.admin,
     projects: projects,
   });
@@ -49,11 +49,11 @@ router.get("/:id", async (req, res) => {
     res.render("show", {
       project: project,
       isAdmin: req.session.admin,
-      title: `${project.name} | Details`,
+      title: `${project.name} Details`,
     });
   } catch (error) {
-    console.error("Error updating project:", error);
-    res.status(500).send("Error deleting project");
+    console.error("Error finding project:", error);
+    res.status(404).send("Cannot find project");
   }
 });
 // Update a project in DB
