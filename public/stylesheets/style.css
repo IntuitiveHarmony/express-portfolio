@@ -172,18 +172,29 @@ footer {
   height: 3em;
 }
 .triangle-container {
+  box-sizing: border-box;
   max-width: 100vw;
   display: flex;
+  flex-wrap: nowrap;
+  height: 100%;
+  width: 100%;
+
+}
+:root {
+  --triangle1: calc(1vw * 7);
+  --triangle2: calc(1vw * 1);
+  --triangle3: calc(1vw * 6);
+  
 }
 .triangle {
   flex-grow: 1;
   width: 0;
   height: 0;
   border-style: solid;
-  border-left: 55px solid transparent;
-  border-right: 55px solid transparent;
-  border-top: 25px solid transparent;
-  border-bottom: 25px solid rgba(1, 233, 245, 0.7);
+  border-left: var(--triangle1) solid transparent;
+  border-right: var(--triangle1) solid transparent;
+  border-top: var(--triangle2) solid transparent;
+  border-bottom: var(--triangle3) solid rgba(1, 233, 245, 0.7);
 }
 .footer-content {
   font-size: .9em;
