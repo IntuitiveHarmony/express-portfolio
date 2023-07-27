@@ -11,14 +11,14 @@ const dropTriangles = () => {
 
 const checkScreenWidth = () => {
   let screenWidth = $(window).width();
-  console.log("Screen Width: " + screenWidth + "px");
+  // console.log("Screen Width: " + screenWidth + "px");
 
   if (screenWidth <= 768) {
     numTriangles = 7;
   } else if (screenWidth <= 1024) {
-    numTriangles = 13;
+    numTriangles = 10;
   } else {
-    numTriangles = 23;
+    numTriangles = 12;
   }
 };
 
