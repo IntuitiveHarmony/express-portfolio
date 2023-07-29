@@ -18,7 +18,7 @@ const checkScreenWidth = () => {
   } else if (screenWidth <= 1024) {
     numTriangles = 10;
   } else {
-    numTriangles = 12;
+    numTriangles = 17;
   }
 };
 

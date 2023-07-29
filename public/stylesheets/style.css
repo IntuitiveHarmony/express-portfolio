@@ -181,9 +181,9 @@ footer {
 
 }
 :root {
-  --triangle1: calc(1vw * 6);
+  --triangle1: calc(1vw * 7);
   --triangle2: calc(1vw * 1);
-  --triangle3: calc(1vw * 6);
+  --triangle3: calc(1vw * 4);
 }
 .triangle {
   flex-grow: 1;
@@ -215,16 +215,16 @@ footer {
   :root {
     --triangle1: calc(1vw * 5);
     --triangle2: calc(1vw * 1);
-    --triangle3: calc(1vw * 5);
+    --triangle3: calc(1vw * 3);
   }
 }
 
 /* Desktop styles (applies to screens larger than 768px) */
 @media (min-width: 1024px) {
   :root {
-    --triangle1: calc(1vw * 4);
+    --triangle1: calc(.97vw * 3);
     --triangle2: calc(1vw * 1);
-    --triangle3: calc(1vw * 4);
+    --triangle3: calc(1vw * 2);
   }
   nav {
     font-size: 1.6em;
