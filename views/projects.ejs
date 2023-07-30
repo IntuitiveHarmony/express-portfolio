@@ -19,8 +19,12 @@
             <hr>
             <div class="card-body">
               <a href="projects/<%= project.id %>" class="card-link nav-link">🔎 Details</a>
-              <a href="<%= project.liveLink %>" class="card-link nav-link" target="_blank" rel="noopener noreferrer">⚡ Live Link</a>
-              <a href="<%= project.githubLink %>" class="card-link nav-link" target="_blank" rel="noopener noreferrer">📂 Repository</a>
+              <% if (project.liveLink)  { %>
+                <a href="<%= project.liveLink %>" class="card-link nav-link" target="_blank" rel="noopener noreferrer">⚡ Live Link</a>
+              <% } else { %>
+                <a href="" class="card-link nav-link disabled">🚧 <s>Live Link</s></a>
+              <% } %>
+                <a href="<%= project.githubLink %>" class="card-link nav-link" target="_blank" rel="noopener noreferrer">📂 Repository</a>
             </div>
           </div>
         <% }) %>

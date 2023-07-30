@@ -162,6 +162,23 @@ hr {
   object-fit: cover;
   /* outline: 1px solid magenta; */
 }
+.show-img {
+  display: initial;
+  float: left;
+  margin-right: 1.3em;
+  shape-outside: circle();
+  border-radius: 50%;
+  /* max-width: 13em; */
+  /* height: 30%; */
+  width: 30%;
+  object-fit: cover;
+
+}
+.back-button {
+  text-decoration: none;
+  cursor: pointer;
+  color: rgb(254, 0, 254);
+}
 footer {
   display: flex;
   justify-content: flex-end;
