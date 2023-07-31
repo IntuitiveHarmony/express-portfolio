@@ -25,6 +25,14 @@
           <textarea type="text" name="description" class="form-control"></textarea>
         </div>
         <div class="form-group">
+          <label for="description">Bullet Points:</label>
+            <ul id="bulletPointsList">
+              <li><textarea type="text" name="bulletPoints" class="form-control"></textarea></li>  
+            </ul>
+            <button type="button" id="addBulletButton">Add Bullet Point</button>
+            
+        </div>
+        <div class="form-group">
           <label for="githubLink">GitHub Link:</label>
           <input type="text" name="githubLink" class="form-control">
         </div>
@@ -93,6 +101,7 @@
 
 
     </div>
+    <script src="/javascripts/addBulletPoint.js"></script>
     <%- include("partials/footer") %>
   </body>
 

@@ -4,8 +4,9 @@
 
   <body>
     <%- include("partials/nav") %>
-      <div class="container">
-        <h2>Edit <%= project.name %></h2>
+      <div class="content-container">
+        <h2>Edit <%= project.name %>
+        </h2>
         <form action="/projects/<%= project._id %>/edit?_method=PUT" method="POST">
           <div class="form-group">
             <label for="name">Name:</label>
@@ -24,16 +25,31 @@
             <textarea type="text" name="description" class="form-control"><%= project.description %></textarea>
           </div>
           <div class="form-group">
+            <label for="description">Bullet Points:</label>
+            <ul id="bulletPointsList">
+              <% for (i=0; i < project.bulletPoints.length; i++) { %>
+                <li>
+                  <textarea type="text" name="bulletPoints"
+                    class="form-control bullet-textarea"><%= project.bulletPoints[i] %></textarea>
+                  <button type="button" class="deleteBullet">Delete</button>
+                </li>
+                <% } %>
+            </ul>
+            <button type="button" id="addBulletButton">Add Bullet Point</button>
+          </div>
+          <div class="form-group">
             <label for="githubLink">GitHub Link:</label>
             <input type="text" name="githubLink" class="form-control" value="<%= project.githubLink %>">
           </div>
           <div class="form-group">
             <label for="display">Display:</label>
-            <input type="checkbox" name="display" value="true" class="form-check-input" <% if (project.display) { %> checked <% } %>>
+            <input type="checkbox" name="display" value="true" class="form-check-input" <% if (project.display) { %> checked
+            <% } %>>
           </div>
           <button type="submit" class="btn btn-primary">Update Project</button>
         </form>
       </div>
+    <script src="/javascripts/addBulletPoint.js"></script>
     <%- include("partials/footer") %>
   </body>
 

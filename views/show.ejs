@@ -11,6 +11,15 @@
       Details for <%= project.name %>
     </h1>
     <img src="<%= project.img%>" alt="" class="show-img blue-pink-border">
+    <% if(project.bulletPoints) { %>
+      <ul>
+        <% project.bulletPoints.forEach(function(bullet) { %>
+          <li>
+            <%= bullet %>
+          </li>
+          <% }) %>
+      </ul>
+    <% } %>
   </div>
   <%- include("partials/footer") %>
 </body>
