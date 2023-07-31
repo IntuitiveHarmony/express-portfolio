@@ -14,13 +14,19 @@ $(() => {
     const deleteButton = $("<button>")
       .text("Delete")
       .on("click", () => {
-        li.remove(); // Remove the li element when the delete button is clicked
+        if (
+          window.confirm("Are you sure you want to delete this bullet point?")
+        ) {
+          li.remove(); // Remove the li element when the user confirms
+        }
       });
     li.append(textarea, deleteButton); // Append the textarea and delete button to the li element
     $("#bulletPointsList").append(li); // Append the li element to the bulletPointsList using jQuery
   }
   // Event listener for delete buttons of existing bullet points
   $("#bulletPointsList").on("click", "button.deleteBullet", function () {
-    $(this).parent().remove(); // Remove the parent li element when the delete button is clicked
+    if (window.confirm("Are you sure you want to delete this bullet point?")) {
+      $(this).parent().remove(); // Remove the parent li element when the user confirms
+    }
   });
 });
