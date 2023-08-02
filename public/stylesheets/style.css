@@ -226,7 +226,15 @@ footer {
 .footer-link:hover {
   color: black;
 }
-
+.badge-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2em;
+}
+.badge-icon {
+  width: 3em;
+  height: 3em;
+}
 /* Tablet breakpoint (768px) */
 @media (min-width: 768px) {
   :root {
