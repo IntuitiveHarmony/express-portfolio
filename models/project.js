@@ -9,7 +9,7 @@ const projectSchema = new mongoose.Schema(
     bulletPoints: [{ type: String }],
     githubLink: { type: String },
     priority: { type: Number },
-    display: { type: Boolean },
+    display: { type: Number },
   },
   { timestamps: true }
 );

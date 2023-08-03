@@ -4,7 +4,7 @@ const Project = require("../models/project");
 
 /* GET users listing. */
 router.get("/", async (req, res) => {
-  const projects = await Project.find({});
+  const projects = await Project.find({ display: 1 }).sort({ priority: 1 });
   res.render("projects", {
     title: "Projects",
     isAdmin: req.session.admin,
@@ -32,6 +32,7 @@ router.post("/", async (req, res) => {
 router.get("/:id/edit", async (req, res) => {
   try {
     const project = await Project.findById(req.params.id);
+    console.log(project);
     res.render("edit", {
       project: project,
       isAdmin: req.session.admin,
@@ -63,6 +64,7 @@ router.post("/:id/edit", async (req, res) => {
       const project = await Project.findByIdAndUpdate(req.params.id, req.body, {
         new: true,
       });
+      console.log(req.body);
       if (!project) {
         return res.status(404).send("Project not found");
       }

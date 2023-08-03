@@ -49,7 +49,7 @@ router.post("/login", async (req, res) => {
 router.get("/dashboard", async (req, res) => {
   if (req.session.admin) {
     try {
-      const projects = await Project.find({});
+      const projects = await Project.find({}).sort({ priority: 1 });
       res.render("dashboard", {
         title: "DASHBOARD",
         isAdmin: req.session.admin,
