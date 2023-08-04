@@ -12,11 +12,11 @@
       <div class="project-deck">
         <% projects.forEach(function(project) { %>
           <div class="project-card" id="<%= project.name %>">
-            <img class="project-img blue-pink-border" src="<%= project.img %>" alt="<%= project.name %>">
             <h2 class="card-title">
               <%= project.name %>
             </h2>
-            <hr>
+            <p class="tab"><%= project.headline %></p>
+            <img class="project-img blue-pink-border" src="<%= project.img %>" alt="<%= project.name %>">
             <div class="card-body">
               <a href="projects/<%= project.id %>" class="card-link nav-link">🔎 Details</a>
               <% if (project.liveLink)  { %>

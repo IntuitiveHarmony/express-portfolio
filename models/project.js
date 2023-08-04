@@ -5,6 +5,7 @@ const projectSchema = new mongoose.Schema(
     name: { type: String, required: true },
     img: { type: String },
     liveLink: { type: String },
+    headline: { type: String },
     description: { type: String },
     bulletPoints: [{ type: String }],
     githubLink: { type: String },
