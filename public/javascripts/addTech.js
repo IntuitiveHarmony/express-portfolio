@@ -22,7 +22,7 @@ $(() => {
     $("#techUsedList").append(li); // Append the li element to the techUsedList using jQuery
   }
   // Event listener for delete buttons of existing techs
-  $("#techUsedList").on("click", "button.deleteBullet", function () {
+  $("#techUsedList").on("click", "button.deleteTech", function () {
     if (window.confirm("Are you sure you want to delete this tech?")) {
       $(this).parent().remove(); // Remove the parent li element when the user confirms
     }

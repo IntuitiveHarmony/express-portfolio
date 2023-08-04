@@ -42,6 +42,19 @@
             <button type="button" id="addBulletButton">Add Bullet Point</button>
           </div>
           <div class="form-group">
+            <label for="description">Tech Used:</label>
+            <ul id="techUsedList">
+              <% for (i=0; i < project.techUsed.length; i++) { %>
+                <li>
+                  <input type="text" name="techUsed"
+                    class="form-control"  value="<%= project.techUsed[i] %>"></input>
+                  <button type="button" class="deleteTech" >Delete</button>
+                </li>
+                <% } %>
+            </ul>
+            <button type="button" id="addTechButton">Add Technology</button>
+          </div>
+          <div class="form-group">
             <label for="githubLink">GitHub Link:</label>
             <input type="text" name="githubLink" class="form-control" value="<%= project.githubLink %>">
           </div>
@@ -58,6 +71,7 @@
         </form>
       </div>
     <script src="/javascripts/addBulletPoint.js"></script>
+    <script src="/javascripts/addTech.js"></script>
     <%- include("partials/footer") %>
   </body>
 
