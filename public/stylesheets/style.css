@@ -259,6 +259,24 @@ footer {
   width: 1.7em;
   height: 2em;
 }
+
+
+
+
+
+
+
+#express {
+  align-self: center;
+  filter: drop-shadow(0 0 1px rgb(0, 191, 255));
+  width: 2em;
+  height: 1.7em;
+}
+#ableton {
+  align-self: center;
+  width: 2.2em;
+  height: 2em;
+}
 /* Tablet breakpoint (768px) */
 @media (min-width: 768px) {
   :root {
