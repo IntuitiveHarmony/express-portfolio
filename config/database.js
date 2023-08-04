@@ -8,9 +8,7 @@ mongoose.connect(connectionString);
 
 // mongoDB connection on success
 mongoose.connection.on("connected", () => {
-  console.log(
-    `[${new Date().toLocaleTimeString()}] - MongoDB connected... 🙌 🙌 🙌\n`
-  );
+  console.log(`🗄  MongoDB Connected at ${new Date().toLocaleTimeString()}\n`);
 });
 
 // mongoDB connection on error
