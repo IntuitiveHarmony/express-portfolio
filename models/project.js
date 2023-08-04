@@ -8,6 +8,7 @@ const projectSchema = new mongoose.Schema(
     headline: { type: String },
     description: { type: String },
     bulletPoints: [{ type: String }],
+    techUsed: [{ type: String }],
     githubLink: { type: String },
     priority: { type: Number },
     display: { type: Number },
