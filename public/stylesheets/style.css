@@ -105,7 +105,7 @@ nav {
 .greeting {
   font-size: 1.3em;
 }
-.right {
+.right-img {
   border-radius: 50%;
   width: 9em;
   height: 9em;
@@ -114,6 +114,10 @@ nav {
   object-position: 70% 70%;
   float: right;
   shape-outside: circle();
+}
+.blue-pink-border-reverse {
+  padding: .2em;
+  box-shadow: 4px -2px 0px rgba(1, 233, 245, 0.6), 4px 6px 0px rgba(255, 0, 255, 0.6);
 }
 .project-deck {
   display: flex;
@@ -283,6 +287,32 @@ footer {
     --triangle2: calc(1vw * 1);
     --triangle3: calc(1vw * 3);
   }
+  .content-container {
+    border-top-left-radius: 10em 8em;
+    padding: 1.5em;
+  }
+  .profile-img {
+    width: 13em;
+    height: 13em;
+    min-width: 9em;
+    margin-right: 2.3em;
+  }
+  .right-img {
+    width: 16em;
+    height: 16em;
+  }
+  .badge-icon {
+    width: 2.5em;
+    height: 2.5em;
+  }
+  #express {
+    width: 2.8em;
+    height: 2.1em;
+  }
+  #ableton {
+    width: 2.8em;
+    height: 2em;
+  }
 }
 
 /* Desktop styles (applies to screens larger than 768px) */
@@ -295,6 +325,10 @@ footer {
   nav {
     font-size: 1.6em;
   }
+  .content-container {
+    border-top-left-radius: 10em 8em;
+    padding: 1.5em;
+  }
   .secondary-box {
     display: flex;
     flex-direction: column;
@@ -303,15 +337,5 @@ footer {
   }
   .greeting {
     font-size: 1.7em;
-  }
-  .content-container {
-    border-top-left-radius: 12em 9em;
-    padding: 1.5em;
-  }
-  .profile-img {
-    width: 19em;
-    height: 19em;
-    min-width: 9em;
-    margin-right: 2.3em;
   }
 }
