@@ -41,6 +41,7 @@ nav {
   margin-left: auto;
 }
 .vertical-line {
+  margin-left: .3em;
   width: 2px;
   /* Adjust the height as needed */
   background-color: rgba(255, 0, 255, 0.7);
@@ -92,6 +93,7 @@ nav {
   box-shadow: 1px 3px 0px rgba(255, 0, 255, 0.6), -5px -3px 0px rgba(1, 233, 245, 0.6);
 }
 .profile-img {
+  /* filter: hue-rotate(317deg); */
   float: left;
   shape-outside: circle();
   border-radius: 50%;
@@ -103,7 +105,7 @@ nav {
   margin-right: 1.7em;
 }
 .greeting {
-  font-size: 1.3em;
+  font-size: 1.5em;
 }
 .right-img {
   border-radius: 50%;
@@ -280,12 +282,24 @@ footer {
   width: 2.2em;
   height: 2em;
 }
+/* just for the links in the nav */
+@media (min-width: 576px) {
+  .secondary-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
 /* Tablet breakpoint (768px) */
 @media (min-width: 768px) {
   :root {
     --triangle1: calc(1vw * 5);
     --triangle2: calc(1vw * 1);
     --triangle3: calc(1vw * 3);
+  }
+  .greeting {
+    font-size: 1.7em;
   }
   .content-container {
     border-top-left-radius: 10em 8em;
@@ -321,21 +335,5 @@ footer {
     --triangle1: calc(.97vw * 3);
     --triangle2: calc(1vw * 1);
     --triangle3: calc(1vw * 2);
-  }
-  nav {
-    font-size: 1.6em;
-  }
-  .content-container {
-    border-top-left-radius: 10em 8em;
-    padding: 1.5em;
-  }
-  .secondary-box {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  .greeting {
-    font-size: 1.7em;
   }
 }
