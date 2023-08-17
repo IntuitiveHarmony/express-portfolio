@@ -12,6 +12,7 @@ const session = require("express-session");
 
 const indexRouter = require("./routes/index");
 const projectsRouter = require("./routes/projects");
+const funStuffRouter = require("./routes/funStuff");
 const adminRouter = require("./routes/admin");
 
 const app = express();
@@ -42,6 +43,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
 app.use("/projects", projectsRouter);
+app.use("/funStuff", funStuffRouter);
 app.use("/admin", adminRouter);
 
 // catch 404 and forward to error handler

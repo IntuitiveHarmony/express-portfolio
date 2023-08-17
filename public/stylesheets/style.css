@@ -23,6 +23,9 @@ body::after {
   position: fixed;
   z-index: -1;
 }
+.dashboard-image {
+  height: 3em;
+}
 nav {
   position: fixed;
   font-size: 1.8em;
@@ -182,7 +185,8 @@ hr {
   border-radius: 50%;
   /* max-width: 13em; */
   /* height: 30%; */
-  width: 30%;
+  width: 7em;
+  height: 7em;
   object-fit: cover;
 
 }
@@ -279,7 +283,7 @@ footer {
 }
 #ableton {
   align-self: center;
-  width: 2.2em;
+  width: 2.9em;
   height: 2em;
 }
 /* just for the links in the nav */
@@ -324,7 +328,7 @@ footer {
     height: 2.1em;
   }
   #ableton {
-    width: 2.8em;
+    width: 3.2em;
     height: 2em;
   }
 }

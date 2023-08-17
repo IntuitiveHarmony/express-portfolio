@@ -7,10 +7,10 @@
   <%- include("partials/nav") %>
   <div class="content-container">
     <a href="/projects" class="back-button"><i class="fa-solid fa-arrow-left"></i> Back to Projects</a>
+    <img src="<%= project.img%>" alt="" class="show-img blue-pink-border">
     <h1>
       Details for <%= project.name %>
     </h1>
-    <img src="<%= project.img%>" alt="" class="show-img blue-pink-border">
     <% if(project.bulletPoints) { %>
       <ul>
         <% project.bulletPoints.forEach(function(bullet) { %>
