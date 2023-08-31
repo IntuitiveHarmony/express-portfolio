@@ -9,7 +9,7 @@ router.get("/", async (req, res) => {
 });
 
 router.get("/clock", async (req, res) => {
-  res.render("funStuff", {
+  res.render("clock", {
     title: "Clock",
     isAdmin: req.session.admin,
   });

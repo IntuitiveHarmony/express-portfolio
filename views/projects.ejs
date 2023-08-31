@@ -11,14 +11,14 @@
       <p>Welcome to <%= title %></p>
       <div class="project-deck">
         <% projects.forEach(function(project) { %>
-          <div class="project-card" id="<%= project.name %>">
+          <div class="project-card" id="<%= project.name %>" data-id="<%= project.id %>">
             <h2 class="card-title">
               <%= project.name %>
             </h2>
             <p class="tab"><%= project.headline %></p>
             <img class="project-img blue-pink-border" src="<%= project.img %>" alt="<%= project.name %>">
             <div class="card-body">
-              <a href="projects/<%= project.id %>" class="card-link nav-link">🔎 Details</a>
+              <a class="card-link nav-link detail-link" link-id="<%= project.id %>">🔎 Details</a>
               <% if (project.liveLink)  { %>
                 <a href="<%= project.liveLink %>" class="card-link nav-link" target="_blank" rel="noopener noreferrer">⚡ Live Link</a>
               <% } else { %>
@@ -26,10 +26,14 @@
               <% } %>
                 <a href="<%= project.githubLink %>" class="card-link nav-link" target="_blank" rel="noopener noreferrer">📂 Repository</a>
             </div>
+            <div class="details-container hide" detail-id="<%= project.id %>">
+              hai
+            </div>
           </div>
         <% }) %>
       </div>
     </div>
+    <script src="/javascripts/showDetails.js"></script>
     <%- include("partials/footer") %>
   </body>
 </html>
