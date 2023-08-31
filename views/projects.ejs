@@ -39,7 +39,7 @@
                 <p class="details-content"><%= project.description %></p>
                 <ul class="project-bullet-container">
                   <% project.bulletPoints.forEach(function(bullet) { %>
-                    <li class="project-bullet"><%= bullet %></li>
+                    <li class="project-bullet"><%- bullet %></li>
                   <% }) %>
                 </ul>
                 <hr>

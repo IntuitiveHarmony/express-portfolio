@@ -102,6 +102,11 @@ nav {
   padding: .2em;
   box-shadow: 1px 3px 0px rgba(255, 0, 255, 0.6), -5px -3px 0px rgba(1, 233, 245, 0.6);
 }
+.pink-link {
+  color: magenta;
+  text-decoration: none;
+  cursor: pointer;
+}
 .profile-img {
   /* filter: hue-rotate(317deg); */
   float: left;
