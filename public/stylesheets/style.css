@@ -94,6 +94,10 @@ nav {
   padding: .7em;
   margin-bottom: 2em;
 }
+
+.no-border-radius {
+  border-top-left-radius: 0px;
+}
 .blue-pink-border {
   padding: .2em;
   box-shadow: 1px 3px 0px rgba(255, 0, 255, 0.6), -5px -3px 0px rgba(1, 233, 245, 0.6);
@@ -321,6 +325,9 @@ footer {
     border-top-left-radius: 10em 8em;
     padding: 1.5em;
   }
+  .no-border-radius {
+    border-top-left-radius: 0px;
+  }
   .profile-img {
     width: 13em;
     height: 13em;
@@ -351,5 +358,8 @@ footer {
     --triangle1: calc(.97vw * 3);
     --triangle2: calc(1vw * 1);
     --triangle3: calc(1vw * 2);
+  }
+  .no-border-radius {
+    border-top-left-radius: 0px;
   }
 }
