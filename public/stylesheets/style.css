@@ -157,6 +157,10 @@ hr {
   color: magenta;
   white-space: nowrap;
 }
+.tech-content { 
+  display: inline-block;
+  font-size: .85em;
+}
 .green-txt {
   color: rgb(26, 182, 107);
 }

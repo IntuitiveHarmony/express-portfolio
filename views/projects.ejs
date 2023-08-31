@@ -25,11 +25,20 @@
                 <a href="" class="card-link nav-link disabled">🚧 <s>Live Link</s></a>
               <% } %>
                 <a href="<%= project.githubLink %>" class="card-link nav-link" target="_blank" rel="noopener noreferrer">📂 Repository</a>
-            </div>
-            <div class="details-container hide" detail-id="<%= project.id %>">
-              hai
-            </div>
+                🛠️
+                <% project.techUsed.forEach(function(tech, index) { %>
+                    <% if (index < project.techUsed.length - 1) { %>
+                      <p class="tech-content"><%= tech %></p> |
+                      <% } else { %>
+                        <p class="tech-content"><%= tech %></p>
+                      <% } %>
+                <% }) %>
+              </div>
+              <div class="details-container hide" detail-id="<%= project.id %>">
+                hai
+              </div>
           </div>
+          <!-- end of card -->
         <% }) %>
       </div>
     </div>
