@@ -224,13 +224,6 @@ hr {
   background-color: rgba(0, 0, 0, 0.5);
   color:rgb(0, 162, 255);
 }
-#mG61Hd {
-  color:rgb(0, 162, 255);
-
-}
-.btn {
-  display: none;
-}
 footer {
   display: flex;
   justify-content: flex-end;
