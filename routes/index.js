@@ -4,7 +4,8 @@ const router = express.Router();
 /* GET home page. */
 router.get("/", function (req, res, next) {
   res.render("home", {
-    title: "Homepage",
+    title: "Portfolio",
+    description: "Who is Intuitive Harmony?",
     isAdmin: req.session.admin,
   });
 });
