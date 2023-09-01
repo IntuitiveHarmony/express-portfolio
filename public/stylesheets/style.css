@@ -63,7 +63,7 @@ nav {
 }
 .logo {
   animation: rotate 9s linear infinite;
-  max-width: 2.3em;
+  max-width: 2.2em;
 }
 .justify-right {
   justify-content: flex-end;
@@ -94,7 +94,6 @@ nav {
   padding: .7em;
   margin-bottom: 2em;
 }
-
 .no-border-radius {
   border-top-left-radius: 0px;
 }
