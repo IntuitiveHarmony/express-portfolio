@@ -219,6 +219,18 @@ hr {
   cursor: pointer;
   color: rgb(254, 0, 254);
 }
+.contact-form {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color:rgb(0, 162, 255);
+}
+#mG61Hd {
+  color:rgb(0, 162, 255);
+
+}
+.btn {
+  display: none;
+}
 footer {
   display: flex;
   justify-content: flex-end;
@@ -267,6 +279,7 @@ footer {
   color: black;
 }
 .tech-container {
+  padding-top: .3em;
   padding-left: .3em;
   background-color: rgba(0, 0, 0, 0.5);
 }
