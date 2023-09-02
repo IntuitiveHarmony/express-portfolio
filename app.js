@@ -18,6 +18,13 @@ const contactRouter = require("./routes/contact");
 
 const app = express();
 
+const http = require("http");
+
+// This keeps the app awake on the heroku server
+setInterval(() => {
+  http.get("https://express-portfolio-jason-19a706a4ebda.herokuapp.com/");
+}, 25 * 60 * 1000); // call every 25 minutes
+
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
