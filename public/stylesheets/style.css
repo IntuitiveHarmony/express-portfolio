@@ -23,6 +23,10 @@ body::after {
   position: fixed;
   z-index: -1;
 }
+.disable-link {
+  pointer-events: none;
+  color: grey;
+}
 .dashboard-image {
   height: 3em;
 }
@@ -240,7 +244,7 @@ footer {
   height: 3em;
   background-color: rgba(1, 233, 245, 0.7);
   color: magenta;
-  height: 3em;
+  height: 5em;
 }
 .triangle-container {
   box-sizing: border-box;
@@ -266,16 +270,31 @@ footer {
   border-top: var(--triangle2) solid transparent;
   border-bottom: var(--triangle3) solid rgba(1, 233, 245, 0.7);
 }
+.footer-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%
+}
 .footer-content {
+  width: 100%;
   font-size: .9em;
   display: flex;
   flex-direction: row-reverse;
-  padding-right: 1.5em;
+  padding: 1.5em;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.footer-links-container {
+  padding: .2em;
+}
+.footer-love-container {
+  align-self: flex-end;
 }
 .footer-link {
   text-decoration: none;
   color: azure;
   cursor: pointer;
+  padding-right: .8em;
 }
 .footer-link:hover {
   color: black;
