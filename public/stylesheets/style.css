@@ -94,6 +94,10 @@ nav {
   padding: .7em;
   margin-bottom: 2em;
 }
+.highlight {
+  display: block;
+  font-size: 1.7em;
+}
 .no-border-radius {
   border-top-left-radius: 0px;
 }
@@ -120,6 +124,11 @@ nav {
 }
 .greeting {
   font-size: 1.5em;
+}
+.bio-card {
+  border-top-left-radius: 4em 3em;
+  width: 100%;
+  padding: .3em;
 }
 .right-img {
   border-radius: 50%;
