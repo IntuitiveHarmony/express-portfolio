@@ -90,11 +90,16 @@ nav {
   justify-content: space-around;
   font-size: .85em;
 }
+.quote {
+  padding: 1em;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
 .content-container { 
   height: initial;
   border-top-left-radius: 4em 3em;
   margin: .5em;
-  background-color: rgba(90, 42, 141, 0.8);
+  background-color: rgb(76, 33, 122, .80);
   padding: .7em;
   margin-bottom: 2em;
 }
@@ -206,7 +211,7 @@ hr {
   padding-top: .3em;
 }
 .card-link:hover {
-  /* color: black; */
+  color: rgb(0, 213, 255);
 }
 .project-img {
   display: initial;
@@ -252,7 +257,7 @@ footer {
   align-items: center;
   height: 3em;
   background-color: rgba(1, 233, 245, 0.7);
-  color: magenta;
+  color: black;
   height: 5em;
 }
 .triangle-container {
@@ -312,7 +317,7 @@ footer {
 .tech-container {
   margin-top: 3em;
   padding-top: .3em;
-  padding-left: .3em;
+  padding-left: 1em;
   background-color: rgba(0, 0, 0, 0.5);
 }
 .tech-deck {
@@ -379,7 +384,9 @@ footer {
     flex-direction: row;
     flex-wrap: wrap;justify-content: space-around;
   }
-
+  .blurb {
+    max-width: 33em;
+  }
   .inspire-content {
     max-width: 20em;
     padding-left: 1em;

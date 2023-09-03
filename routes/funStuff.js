@@ -8,11 +8,4 @@ router.get("/", async (req, res) => {
   });
 });
 
-router.get("/clock", async (req, res) => {
-  res.render("clock", {
-    title: "Clock",
-    isAdmin: req.session.admin,
-  });
-});
-
 module.exports = router;
