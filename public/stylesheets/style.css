@@ -99,8 +99,16 @@ nav {
   margin-bottom: 2em;
 }
 .highlight {
-  display: block;
+  width: 92%;
+  padding-left: .1em;
+  color: rgb(214, 214, 214);
+  border-left: 5px solid rgb(200, 0, 255);
+  border-bottom: 1px solid rgb(157, 0, 255);
+  /* display: block; */
   font-size: 1.7em;
+}
+.inspire-content {
+  padding-left: 1em;
 }
 .no-border-radius {
   border-top-left-radius: 0px;
@@ -127,6 +135,7 @@ nav {
   margin-right: 1.7em;
 }
 .greeting {
+  color: rgb(214, 214, 214);
   font-size: 1.5em;
 }
 .bio-card {
@@ -175,7 +184,7 @@ hr {
   padding-left: .2em;
   border-left: 5px solid rgb(200, 0, 255);
   border-bottom: 1px solid rgb(157, 0, 255);
-  color: magenta;
+  color: rgb(214, 214, 214);
   white-space: nowrap;
 }
 .tech-content { 
@@ -197,7 +206,7 @@ hr {
   padding-top: .3em;
 }
 .card-link:hover {
-  color: black;
+  /* color: black; */
 }
 .project-img {
   display: initial;
@@ -299,7 +308,9 @@ footer {
 .footer-link:hover {
   color: black;
 }
+
 .tech-container {
+  margin-top: 3em;
   padding-top: .3em;
   padding-left: .3em;
   background-color: rgba(0, 0, 0, 0.5);
@@ -362,6 +373,16 @@ footer {
   .content-container {
     border-top-left-radius: 10em 8em;
     padding: 1.5em;
+  }
+  .inspire-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;justify-content: space-around;
+  }
+
+  .inspire-content {
+    max-width: 20em;
+    padding-left: 1em;
   }
   .no-border-radius {
     border-top-left-radius: 0px;
