@@ -5,16 +5,16 @@
   <body>
     <%- include("partials/nav") %>
     <div class="content-container no-border-radius">
-      <h2 class="greeting">
+      <h2 class="content-header">
         <%= title %>
       </h2>
       <p class="quote tab">Here are some examples of my past work. <br><br> Feel free to check out the live links below<br>Explore <a href="https://github.com/IntuitiveHarmony/express-portfolio" class="pink-link" target="_blank" rel="noopener noreferrer">the code for this site</a> and the others in my GitHub where I go by <a href="https://github.com/IntuitiveHarmony" class="pink-link" target="_blank" rel="noopener noreferrer">Intuitive Harmony</a><br><br><a href="/contact" class="pink-link">Send me a message</a> if you have any questions or comments to share. </p>
       <div class="project-deck">
         <% projects.forEach(function(project) { %>
           <div class="project-card" id="<%= project.name %>" data-id="<%= project.id %>">
-            <h2 class="card-title">
+            <h3 class="card-title">
               <%= project.name %>
-            </h2>
+            </h3>
             <p class="tab"><%= project.headline %></p>
             <img class="project-img blue-pink-border" src="<%= project.img %>" alt="<%= project.name %>">
             <div class="card-body">
