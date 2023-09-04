@@ -34,10 +34,9 @@ router.post("/", async (req, res) => {
 router.get("/:id/edit", async (req, res) => {
   try {
     const exploration = await Exploration.findById(req.params.id);
-    console.log(exploration);
     exploration;
-    res.render("edit", {
-      exploration: exploration,
+    res.render("editExploration", {
+      project: exploration,
       isAdmin: req.session.admin,
       title: `Edit ${exploration.name}`,
     });
