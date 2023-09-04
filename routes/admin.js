@@ -3,6 +3,7 @@ const router = express.Router();
 const bcrypt = require("bcrypt");
 const Admin = require("../models/admin");
 const Project = require("../models/project");
+const Exploration = require("../models/exploration");
 // const adminCtrl = require("../controllers/admin");
 
 /* GET users listing. */
@@ -50,10 +51,12 @@ router.get("/dashboard", async (req, res) => {
   if (req.session.admin) {
     try {
       const projects = await Project.find({}).sort({ priority: 1 });
+      const explorations = await Exploration.find({}).sort({ priority: 1 });
       res.render("dashboard", {
         title: "DASHBOARD",
         isAdmin: req.session.admin,
         projects: projects,
+        explorations: explorations,
       });
     } catch (err) {
       res.status(500).send("Error getting projects");
