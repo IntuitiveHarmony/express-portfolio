@@ -7,7 +7,6 @@
     <div class="content-container no-border-radius">
       
       <h2>Current Projects</h2>
-      
       <!-- Table to display projects -->
       <div class="table-responsive">
         <table class="table table-bordered">
@@ -56,6 +55,60 @@
                   </td>
                 </tr>
                 <% }) %>
+              </tbody>
+            </table>
+          </div>
+
+          <h2>Current Explorations</h2>
+          <!-- Table to display Explorations -->
+          <div class="table-responsive">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Priority</th>
+                  <th>Name</th>
+                  <th>Headline</th>
+                  <th>Image</th>
+                  <th>Live Link</th>
+                  <th>GitHub Link</th>
+                  <th>Display</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% explorations.forEach((exploration)=> { %>
+                  <tr>
+                    <td>
+                      <%= exploration.priority %>
+                    </td>
+                    <td>
+                      <%= exploration.name %>
+                    </td>
+                    <td>
+                      <%= exploration.headline %>
+                    </td>
+                    <td>
+                      <img src="<%= exploration.img %>" class="dashboard-image">
+                    </td>
+                    <td>
+                      <a href="<%= exploration.liveLink %>" target="_blank" rel="noopener noreferrer">Live Site</a>
+                    </td>
+                    <td>
+                      <a href="<%= exploration.githubLink %>" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    </td>
+                    <td>
+                      <%= exploration.display %>
+                    </td>
+                    <td>
+                      <a href="/explorations/<%= exploration._id %>/edit" class="btn btn-primary"><i
+                          class="fa-regular fa-pen-to-square"></i></a>
+                      <form action="/explorations/<%= exploration._id %>?_method=DELETE" method="POST"
+                        onsubmit="return confirm('Sure you want to delete <%= exploration.name %>?')" style="display: inline;">
+                        <button type="submit" class="btn btn-danger"><i class="fa-regular fa-trash-can"></i></button>
+                      </form>
+                    </td>
+                  </tr>
+                  <% }) %>
               </tbody>
             </table>
           </div>
@@ -113,6 +166,64 @@
               </div>
               <br>
               <button type="submit" class="btn btn-primary">Add Project</button>
+              <a href="/admin/dashboard" class="btn btn-danger">Cancel</a>
+              <hr>
+            </form>
+          </details>
+
+          <!-- Form to add a new exploration -->
+          <details>
+            <summary>Add New Exploration</summary>
+            <h3>New Exploration</h3>
+            <form action="/explorations" method="POST">
+              <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" name="name" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label for="name">Headline:</label>
+                <input type="text" name="headline" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label for="img">Image:</label>
+                <input type="text" name="img" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="liveLink">Live Link:</label>
+                <input type="text" name="liveLink" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="githubLink">GitHub Link:</label>
+                <input type="text" name="githubLink" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea type="text" name="description" class="form-control"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="bulletPointsList">Bullet Points:</label>
+                <ul id="bulletPointsList">
+                  <li><textarea type="text" name="bulletPoints" class="form-control"></textarea></li>
+                </ul>
+                <button type="button" id="addBulletButton">Add Bullet Point</button>
+              </div>
+              <div class="form-group">
+                <label for="techUsedList">Tech Used:</label>
+                <ul id="techUsedList">
+                  <li><input type="text" name="techUsed" class="form-control"></input></li>
+                </ul>
+                <button type="button" id="addTechButton">Add Technology</button>
+              </div>
+              <div class="form-group">
+                <label for="githubLink">Priority: (1 - 10)</label>
+                <input type="number" name="priority" min="0" max="10" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="display">Display: (1 = true, 0 = false)</label>
+                <input type="number" name="display" min="0" max="1" checked='true' class="form-control">
+              </div>
+              <br>
+              <button type="submit" class="btn btn-primary">Add Exploration</button>
               <a href="/admin/dashboard" class="btn btn-danger">Cancel</a>
               <hr>
             </form>

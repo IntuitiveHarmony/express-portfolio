@@ -12,7 +12,7 @@ const session = require("express-session");
 
 const indexRouter = require("./routes/index");
 const projectsRouter = require("./routes/projects");
-const funStuffRouter = require("./routes/funStuff");
+const explorationsRouter = require("./routes/explorations");
 const adminRouter = require("./routes/admin");
 const contactRouter = require("./routes/contact");
 
@@ -46,7 +46,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
 app.use("/projects", projectsRouter);
-app.use("/funStuff", funStuffRouter);
+app.use("/explorations", explorationsRouter);
 app.use("/admin", adminRouter);
 app.use("/contact", contactRouter);
 
