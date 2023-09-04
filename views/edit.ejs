@@ -4,7 +4,7 @@
 
   <body>
     <%- include("partials/nav") %>
-      <div class="content-container">
+      <div class="content-container no-border-radius form-container">
         <h2>Edit <%= project.name %>
         </h2>
         <form action="/projects/<%= project._id %>/edit?_method=PUT" method="POST">

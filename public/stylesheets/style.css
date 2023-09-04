@@ -97,6 +97,7 @@ nav {
   border-radius: 10px;
 }
 .content-container { 
+  width: 92%;
   max-width: 80em;
   height: initial;
   border-top-left-radius: 4em 3em;
@@ -104,6 +105,9 @@ nav {
   background-color: rgb(76, 33, 122, .80);
   padding: .7em;
   margin-bottom: 2em;
+}
+.form-container {
+  width: 90%;
 }
 .highlight {
   width: 92%;
@@ -397,6 +401,9 @@ footer {
   .content-container {
     border-top-left-radius: 10em 8em;
     padding: 1.5em;
+  }
+  .form-container {
+    width: 40em;
   }
   .inspire-container {
     flex-wrap: wrap;justify-content: space-around;
