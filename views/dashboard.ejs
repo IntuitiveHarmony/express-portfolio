@@ -6,10 +6,10 @@
   <%- include("partials/nav") %>
   <div class="content-container no-border-radius">
 
-    <h2>Current Projects</h2>
+    <h2 class="table-title">Current Projects</h2>
     <!-- Table to display projects -->
     <div class="table-responsive">
-      <table class="table table-bordered">
+      <table class="dash-table">
         <thead>
           <tr>
             <th>Priority</th>
@@ -38,18 +38,22 @@
               <img src="<%= project.img %>" class="dashboard-image">
             </td>
             <td>
-              <a href="<%= project.liveLink %>" target="_blank" rel="noopener noreferrer">Live Site</a>
+              <a href="<%= project.liveLink %>" target="_blank" class="nav-link" rel="noopener noreferrer">Live Site</a>
             </td>
             <td>
-              <a href="<%= project.githubLink %>" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a href="<%= project.githubLink %>" target="_blank" class="nav-link" rel="noopener noreferrer">GitHub</a>
             </td>
             <td>
-              <%= project.display %>
+              <% if (project.display) { %>
+              <i class="fa-solid fa-check"></i>
+              <% } else { %>
+              <i class="fa-solid fa-xmark"></i>
+              <% } %>
             </td>
-            <td>
-              <a href="/projects/<%= project._id %>/edit" class="btn btn-primary"><i class="fa-regular fa-pen-to-square"></i></a>
+            <td class="action-container">
+              <a href="/projects/<%= project._id %>/edit" class="nav-link edit-button"><i class="fa-regular fa-pen-to-square"></i></a>
               <form action="/projects/<%= project._id %>?_method=DELETE" method="POST" onsubmit="return confirm('Sure you want to delete <%= project.name %>?')" style="display: inline;">
-                <button type="submit" class="btn btn-danger"><i class="fa-regular fa-trash-can"></i></button>
+                <button type="submit" class="delete-button"><i class="fa-regular fa-trash-can"></i></button>
               </form>
             </td>
           </tr>
@@ -58,10 +62,10 @@
       </table>
     </div>
 
-    <h2>Current Explorations</h2>
+    <h2 class="table-title">Current Explorations</h2>
     <!-- Table to display Explorations -->
     <div class="table-responsive">
-      <table class="table table-bordered">
+      <table class="dash-table">
         <thead>
           <tr>
             <th>Priority</th>
@@ -90,18 +94,22 @@
               <img src="<%= exploration.img %>" class="dashboard-image">
             </td>
             <td>
-              <a href="<%= exploration.liveLink %>" target="_blank" rel="noopener noreferrer">Live Site</a>
+              <a href="<%= exploration.liveLink %>" class="nav-link" target="_blank" rel="noopener noreferrer">Live Site</a>
             </td>
             <td>
-              <a href="<%= exploration.githubLink %>" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a href="<%= exploration.githubLink %>" class="nav-link" target="_blank" rel="noopener noreferrer">GitHub</a>
             </td>
             <td>
-              <%= exploration.display %>
+              <% if (exploration.display) { %>
+              <i class="fa-solid fa-check"></i>
+              <% } else { %>
+              <i class="fa-solid fa-xmark"></i>
+              <% } %>
             </td>
-            <td>
-              <a href="/explorations/<%= exploration._id %>/edit" class="btn btn-primary"><i class="fa-regular fa-pen-to-square"></i></a>
+            <td class="action-container">
+              <a href="/explorations/<%= exploration._id %>/edit" class="nav-link edit-button"><i class="fa-regular fa-pen-to-square"></i></a>
               <form action="/explorations/<%= exploration._id %>?_method=DELETE" method="POST" onsubmit="return confirm('Sure you want to delete <%= exploration.name %>?')" style="display: inline;">
-                <button type="submit" class="btn btn-danger"><i class="fa-regular fa-trash-can"></i></button>
+                <button type="submit" class="nav-link delete-button"><i class="fa-regular fa-trash-can"></i></button>
               </form>
             </td>
           </tr>
@@ -113,7 +121,7 @@
     <!-- Form to add a new project -->
     <details>
       <summary>Add New Project</summary>
-      <h3>New Project</h3>
+      <h3 class="card-title">New Project</h3>
       <form action="/projects" method="POST">
         <div class="form-group">
           <label for="name">Name:</label>
@@ -144,14 +152,14 @@
           <ul id="bulletPointsList">
             <li><textarea type="text" name="bulletPoints" class="form-control"></textarea></li>
           </ul>
-          <button type="button" id="addBulletButton">Add Bullet Point</button>
+          <button type="button" class="nav-link edit-button" id="addBulletButton">Add Bullet Point</button>
         </div>
         <div class="form-group">
           <label for="techUsedList">Tech Used:</label>
           <ul id="techUsedList">
             <li><input type="text" name="techUsed" class="form-control"></input></li>
           </ul>
-          <button type="button" id="addTechButton">Add Technology</button>
+          <button type="button" class="nav-link edit-button" id="addTechButton">Add Technology</button>
         </div>
         <div class="form-group">
           <label for="githubLink">Priority: (1 - 10)</label>
@@ -162,8 +170,10 @@
           <input type="number" name="display" min="0" max="1" checked='true' class="form-control">
         </div>
         <br>
-        <button type="submit" class="btn btn-primary">Add Project</button>
-        <a href="/admin/dashboard" class="btn btn-danger">Cancel</a>
+        <div class="action-container">
+          <button type="submit" class="nav-link edit-button">Add Project</button>
+          <a href="/admin/dashboard" class="delete-button">Cancel</a>
+        </div>
         <hr>
       </form>
     </details>
@@ -171,7 +181,7 @@
     <!-- Form to add a new exploration -->
     <details>
       <summary>Add New Exploration</summary>
-      <h3>New Exploration</h3>
+      <h3 class="card-title">New Exploration</h3>
       <form action="/explorations" method="POST">
         <div class="form-group">
           <label for="name">Name:</label>
@@ -202,14 +212,14 @@
           <ul id="bulletPointsList">
             <li><textarea type="text" name="bulletPoints" class="form-control"></textarea></li>
           </ul>
-          <button type="button" id="addBulletButton">Add Bullet Point</button>
+          <button type="button" class="nav-link edit-button" id="addBulletButton">Add Bullet Point</button>
         </div>
         <div class="form-group">
           <label for="techUsedList">Tech Used:</label>
           <ul id="techUsedList">
             <li><input type="text" name="techUsed" class="form-control"></input></li>
           </ul>
-          <button type="button" id="addTechButton">Add Technology</button>
+          <button type="button" class="nav-link edit-button" id="addTechButton">Add Technology</button>
         </div>
         <div class="form-group">
           <label for="githubLink">Priority: (1 - 10)</label>
@@ -220,8 +230,10 @@
           <input type="number" name="display" min="0" max="1" checked='true' class="form-control">
         </div>
         <br>
-        <button type="submit" class="btn btn-primary">Add Exploration</button>
-        <a href="/admin/dashboard" class="btn btn-danger">Cancel</a>
+        <div class="action-container">
+          <button type="submit" class="nav-link edit-button">Add Exploration</button>
+          <a href="/admin/dashboard" class="delete-button">Cancel</a>
+        </div>
         <hr>
       </form>
     </details>

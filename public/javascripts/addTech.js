@@ -4,7 +4,6 @@ $(() => {
   $("#addTechButton").on("click", addTechPoint);
 
   function addTechPoint() {
-    console.log("addTech");
     const li = $("<li></li>"); // Create a new li element using jQuery
     const textarea = $("<input>").attr({
       // Create a new textarea element with attributes using jQuery
@@ -13,6 +12,7 @@ $(() => {
     });
     const deleteButton = $("<button>")
       .text("Delete")
+      .addClass("delete-button")
       .on("click", () => {
         if (window.confirm("Are you sure you want to delete this tech?")) {
           li.remove(); // Remove the li element when the user confirms

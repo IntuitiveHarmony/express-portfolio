@@ -4,7 +4,6 @@ $(() => {
   $("#addBulletButton").on("click", addBulletPoint);
 
   function addBulletPoint() {
-    console.log("addBullet");
     const li = $("<li></li>"); // Create a new li element using jQuery
     const textarea = $("<textarea>").attr({
       // Create a new textarea element with attributes using jQuery
@@ -13,6 +12,7 @@ $(() => {
     });
     const deleteButton = $("<button>")
       .text("Delete")
+      .addClass("delete-button")
       .on("click", () => {
         if (
           window.confirm("Are you sure you want to delete this bullet point?")

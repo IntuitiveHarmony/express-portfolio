@@ -64,7 +64,6 @@ router.post("/:id/edit", async (req, res) => {
       const project = await Project.findByIdAndUpdate(req.params.id, req.body, {
         new: true,
       });
-      console.log(req.body);
       if (!project) {
         return res.status(404).send("Project not found");
       }

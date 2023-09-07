@@ -382,6 +382,81 @@ footer {
   width: 2.9em;
   height: 2em;
 }
+summary {
+  margin-bottom: 3em;
+}
+.table-title {
+  color: rgb(214, 214, 214);
+}
+.dash-table {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: rgb(0, 162, 255);
+  margin-bottom: 2em;
+}
+th {
+  color: rgb(214, 214, 214);
+  padding: 0.5em;
+  border-bottom: 1px solid rgb(157, 0, 255);
+  text-align: center;
+}
+td {
+  /* padding: 0.5em; */
+  text-align: center;
+}
+.action-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 0.5em;
+}
+.delete-button {
+  text-decoration: none;
+  color: magenta;
+  background: none;
+  border: none;
+  font: inherit;
+  margin: 0;
+  cursor: pointer;
+  outline: none;
+}
+.delete-button:hover {
+  color: rgb(0, 162, 255);
+}
+.edit-button {
+  padding: 0.5em;
+  background: none;
+  border: none;
+  font: inherit;
+  margin: 0;
+  cursor: pointer;
+  outline: none;
+}
+.form-control {
+  border: 1px solid rgb(0, 162, 255);
+  margin: 0.3em;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: rgb(0, 162, 255);
+}
+input:focus {
+  outline: none;
+}
+.form-control:focus {
+  outline: none;
+  border: magenta;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: rgb(0, 162, 255);
+}
+.ff-submit-icon {
+  color: black;
+}
+.ff-submit {
+  color: black;
+  background-color: magenta;
+}
+.ff-submit:hover {
+  background-color: rgb(0, 162, 255);
+}
 /* just for the links in the nav */
 @media (min-width: 576px) {
   .secondary-box {
