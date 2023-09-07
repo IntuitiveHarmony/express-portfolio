@@ -3,8 +3,7 @@
     <a class="navbar-brand" href="/"><img src="/images/favicon.ico" alt="Logo" class="logo"></a>
     <a class="navbar-brand name me-auto" aria-current="page" href="/">Jason Horst</a>
 
-    <button class="navbar-toggler nav-link" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler nav-link" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
@@ -15,22 +14,20 @@
           <a class="nav-link secondary-link" href="/explorations">Explorations</a>
         </li>
         <% if (isAdmin) { %>
-          <li class="nav-item">
-            <a href="/admin/dashboard" title="Logout" class="nav-link">Dashboard</a>
-          </li>
-          <li class="nav-item">
-            <a href="/logout" title="Logout" class="nav-link">Logout</a>
-          </li>
-          <% } %>
+        <li class="nav-item">
+          <a href="/admin/dashboard" title="Logout" class="nav-link">Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a href="/logout" title="Logout" class="nav-link">Logout</a>
+        </li>
+        <% } %>
       </ul>
       <ul class="navbar-nav navbar-nav-right link-box">
         <li class="nav-item justify-right">
-          <a href="https://github.com/IntuitiveHarmony" target="_blank" rel="noopener noreferrer" title="My GitHub"
-            class="nav-link"><i class="fa-brands fa-github"></i></a>
+          <a href="https://github.com/IntuitiveHarmony" target="_blank" rel="noopener noreferrer" title="My GitHub" class="nav-link"><i class="fa-brands fa-github"></i></a>
         </li>
         <li class="nav-item justify-right">
-          <a href="https://www.linkedin.com/in/jason-horst/" target="_blank" rel="noopener noreferrer"
-            title="My LinkedIn" class="nav-link"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="https://www.linkedin.com/in/jason-horst/" target="_blank" rel="noopener noreferrer" title="My LinkedIn" class="nav-link"><i class="fa-brands fa-linkedin"></i></a>
         </li>
         <li class="nav-item justify-right">
           <a href="/contact" title="Send Me a Message" class="nav-link"><i class="fa-solid fa-envelope"></i></a>

@@ -2,54 +2,55 @@
 <html>
 <%- include("partials/head") %>
 
-  <body>
-    <%- include("partials/nav") %>
-    <div class="content-container no-border-radius">
-      <h2 class="content-header">
-        <%= title %>
-      </h2>
-      <p class="quote tab">Here are some examples of my past work. <br><br> Feel free to check out the live links below<br>Explore <a href="https://github.com/IntuitiveHarmony/express-portfolio" class="pink-link" target="_blank" rel="noopener noreferrer">the code for this site</a> and the others in my GitHub where I go by <a href="https://github.com/IntuitiveHarmony" class="pink-link" target="_blank" rel="noopener noreferrer">Intuitive Harmony</a><br><br><a href="/contact" class="pink-link">Send me a message</a> if you have any questions or comments to share. </p>
-      <div class="project-deck">
-        <% projects.forEach(function(project) { %>
-          <div class="project-card" id="<%= project.name %>" data-id="<%= project.id %>">
-            <h3 class="card-title">
-              <%= project.name %>
-            </h3>
-            <p class="tab"><%= project.headline %></p>
-            <img class="project-img blue-pink-border" src="<%= project.img %>" alt="<%= project.name %>">
-            <div class="card-body">
-              <a class="card-link nav-link detail-link" link-id="<%= project.id %>">🔎 Details</a>
-              <% if (project.liveLink)  { %>
-                <a href="<%= project.liveLink %>" class="card-link nav-link" target="_blank" rel="noopener noreferrer">⚡ Live Link</a>
-              <% } else { %>
-                <a href="" class="card-link nav-link disabled">🚧 <s>Live Link</s></a>
-              <% } %>
-                <a href="<%= project.githubLink %>" class="card-link nav-link" target="_blank" rel="noopener noreferrer">📂 Repository</a>
-                🛠️
-                <% project.techUsed.forEach(function(tech, index) { %>
-                    <% if (index < project.techUsed.length - 1) { %>
-                      <p class="tech-content"><%= tech %></p> |
-                      <% } else { %>
-                        <p class="tech-content"><%= tech %></p>
-                      <% } %>
-                <% }) %>
-              </div>
-              <div class="details-container hide" detail-id="<%= project.id %>">
-                <div class="card-bottom-border"></div>
-                <p class="details-content"><%= project.description %></p>
-                <ul class="project-bullet-container">
-                  <% project.bulletPoints.forEach(function(bullet) { %>
-                    <li class="project-bullet"><%- bullet %></li>
-                  <% }) %>
-                </ul>
-                <hr>
-              </div>
+<body>
+  <%- include("partials/nav") %>
+  <div class="content-container no-border-radius">
+    <h2 class="content-header">
+      <%= title %>
+    </h2>
+    <p class="quote tab">Here are some examples of my past work. <br><br> Feel free to check out the live links below<br>Explore <a href="https://github.com/IntuitiveHarmony/express-portfolio" class="pink-link" target="_blank" rel="noopener noreferrer">the code for this site</a> and the others in my GitHub where I go by <a href="https://github.com/IntuitiveHarmony" class="pink-link" target="_blank" rel="noopener noreferrer">Intuitive Harmony</a><br><br><a href="/contact" class="pink-link">Send me a message</a> if you have any questions or comments to share. </p>
+    <div class="project-deck">
+      <% projects.forEach(function(project) { %>
+      <div class="project-card" id="<%= project.name %>" data-id="<%= project.id %>">
+        <h3 class="card-title">
+          <%= project.name %>
+        </h3>
+        <p class="tab"><%= project.headline %></p>
+        <img class="project-img blue-pink-border" src="<%= project.img %>" alt="<%= project.name %>">
+        <div class="card-body">
+          <a class="card-link nav-link detail-link" link-id="<%= project.id %>">🔎 Details</a>
+          <% if (project.liveLink)  { %>
+          <a href="<%= project.liveLink %>" class="card-link nav-link" target="_blank" rel="noopener noreferrer">⚡ Live Link</a>
+          <% } else { %>
+          <a href="" class="card-link nav-link disabled">🚧 <s>Live Link</s></a>
+          <% } %>
+          <a href="<%= project.githubLink %>" class="card-link nav-link" target="_blank" rel="noopener noreferrer">📂 Repository</a>
+          <p class="tech-content">🛠️
+            <% project.techUsed.forEach(function(tech, index) { %>
+            <% if (index < project.techUsed.length - 1) { %>
+            <%= tech %> |
+            <% } else { %>
+            <%= tech %></p>
+          <% } %>
+          <% }) %>
+          <div class="details-container hide" detail-id="<%= project.id %>">
+            <div class="card-bottom-border"></div>
+            <p class="details-content"><%= project.description %></p>
+            <ul class="project-bullet-container">
+              <% project.bulletPoints.forEach(function(bullet) { %>
+              <li class="project-bullet"><%- bullet %></li>
+              <% }) %>
+            </ul>
+            <hr>
           </div>
-          <!-- end of card -->
-        <% }) %>
+        </div>
       </div>
+      <!-- end of card -->
+      <% }) %>
     </div>
-    <script src="/javascripts/showProjectDetails.js"></script>
-    <%- include("partials/footer") %>
-  </body>
+  </div>
+  <script src="/javascripts/showProjectDetails.js"></script>
+  <%- include("partials/footer") %>
+</body>
+
 </html>

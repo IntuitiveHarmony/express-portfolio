@@ -2,16 +2,16 @@
 <html>
 <%- include("partials/head") %>
 
-  <body>
-    <%- include("partials/nav") %>
-    <div class="content-container no-border-radius">
-      <form action="/admin/login" method="POST">
-        <input type="text" name="username" placeholder="Username">
-        <input type="password" name="password" placeholder="Password">
-        <input type="submit" value="Login">
-      </form>
-    </div>
-    <%- include("partials/footer") %>
-  </body>
+<body>
+  <%- include("partials/nav") %>
+  <div class="content-container no-border-radius">
+    <form action="/admin/login" method="POST">
+      <input type="text" name="username" placeholder="Username">
+      <input type="password" name="password" placeholder="Password">
+      <input type="submit" value="Login">
+    </form>
+  </div>
+  <%- include("partials/footer") %>
+</body>
 
 </html>
