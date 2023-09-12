@@ -482,8 +482,8 @@ strong {
 .ff-description ol > li > a:hover {
   cursor: pointer;
 }
-/* just for the links in the nav */
 @media (min-width: 576px) {
+  /* just for the links in the nav */
   .secondary-box {
     display: flex;
     flex-direction: column;

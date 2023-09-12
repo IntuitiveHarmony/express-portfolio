@@ -20,7 +20,7 @@ The footer of my portfolio presented a particularly interesting challenge. It us
 
 ## Getting Started
 
-The site is deployed to Heroku, to explore my portfolio and view my projects, visit [JasonHorst.net](JasonHorst.net). Feel free to reach out to me if you have any questions or would like to collaborate on a project.
+The site is deployed to Heroku, to explore my portfolio and view my projects, visit [JasonHorst.net](https://jasonhorst.net/). Feel free to reach out to me if you have any questions or would like to collaborate on a project.
 
 ## Technologies Used
 
