@@ -509,28 +509,6 @@ strong {
     justify-content: center;
     align-items: center;
   }
-  #express {
-    align-self: center;
-    filter: drop-shadow(0 0 1px rgb(0, 191, 255));
-    width: 2em;
-    height: 1.3em;
-  }
-  #express {
-    width: 3em;
-    height: 2.2em;
-  }
-  #arduino {
-    width: 3.6em;
-    height: 2.4em;
-  }
-  #md {
-    width: 3.2em;
-    height: 2.7em;
-  }
-  #sparkfun {
-    height: 2.4em;
-    width: 1.8em;
-  }
 }
 /* Tablet breakpoint (768px) */
 @media (min-width: 768px) {
@@ -583,6 +561,28 @@ strong {
   .footer-content {
     padding-right: 1em;
     padding-left: 1em;
+  }
+  #express {
+    align-self: center;
+    filter: drop-shadow(0 0 1px rgb(0, 191, 255));
+    width: 2em;
+    height: 1.3em;
+  }
+  #express {
+    width: 3em;
+    height: 2.2em;
+  }
+  #arduino {
+    width: 3.6em;
+    height: 2.4em;
+  }
+  #md {
+    width: 3.2em;
+    height: 2.7em;
+  }
+  #sparkfun {
+    height: 2.4em;
+    width: 1.8em;
   }
 }
 
